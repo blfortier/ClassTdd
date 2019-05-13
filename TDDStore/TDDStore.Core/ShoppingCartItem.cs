@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BillPay
+namespace TDDStore.Core
 {
-    class Program
+    public class ShoppingCartItem
     {
-        static void Main(string[] args)
-        {
-        }
+        public Guid ItemId;
+        public int Quantity;
     }
+    
 }
