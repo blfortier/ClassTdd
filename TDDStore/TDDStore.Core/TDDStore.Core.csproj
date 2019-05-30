@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
@@ -58,7 +59,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Exceptions\InvalidOrderException.cs" />
+    <Compile Include="ICustomerService.cs" />
     <Compile Include="IOrderDataService.cs" />
+    <Compile Include="IOrderFulfillmentService.cs" />
+    <Compile Include="IOrderFulfillmentService.Designer.cs">
+      <DependentUpon>IOrderFulfillmentService.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

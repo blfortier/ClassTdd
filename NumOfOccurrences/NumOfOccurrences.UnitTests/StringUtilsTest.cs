@@ -22,19 +22,7 @@ namespace NumOfOccurrences.UnitTests
             _stringUtils = new StringUtils();
         }
 
-        [Test]
-        public void ShouldBeAbleToCountNumberOfLettersInSimpleSentence()
-        {
-            string sentenceToScan = "TDD is awesome!";
-            string charToScanFor = "e";
-            int expectedResult = 2;
-
-            int result = _stringUtils.FindNumberOfOccurences(sentenceToScan, charToScanFor);
-            Assert.AreEqual(expectedResult, result);
-
-        }
-
-        [Test]
+       [Test]
         public void ShouldBeAbleToCountNumberOfLettersInAComplexSentence()
         {
             string sentenceToScan = "Once is unique, twice is a coincidence, three times is a pattern.";
@@ -55,5 +43,18 @@ namespace NumOfOccurrences.UnitTests
             Assert.Throws<System.ArgumentException>(() => _stringUtils.FindNumberOfOccurences(sentenceToScan, charToScanFor));
         }
 
+
+        [Test]
+        public void ShouldBeAbleToCountNumberOfLettersInSimpleSentence()
+        {
+            string sentenceToScan = "TDD is awesome!";
+            string charToScanFor = "e";
+            int expectedResult = 2;
+
+            int result = _stringUtils.FindNumberOfOccurences(sentenceToScan, charToScanFor);
+            Assert.AreEqual(expectedResult, result);
+
+        }
+    
     }
 }
