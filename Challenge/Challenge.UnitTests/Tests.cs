@@ -49,12 +49,12 @@ namespace WordWrap.UnitTests
         }
 
         [Test]
-        public void AddNewLinesToLongSentenceEveryColumnInt()
+        public void AddNewLinesToLongSentenceAtEveryColumnInt()
         {
             string testString = "A little fox becomes best friends with a hunting dog.";
             int testCol = 9;
 
-            string expected = "A little\n fox beco\nmes best\n friends\n with a h\nunting do\ng.";
+            string expected = "A little \nfox becom\nes best f\nriends wi\nth a hunt\ning dog.";
             var actual = test.Wrapper(testString, testCol);
 
             Assert.AreEqual(expected, actual);
@@ -62,7 +62,7 @@ namespace WordWrap.UnitTests
 
 
         //[Test]
-        //public void IfStringIsMoreThanOneWordBreakAfterWord()
+        //public void IfStringIsTwoWords_BreakAfterFirstWord()
         //{
         //    string testString = "Hello World";
         //    int testCol = 5;
@@ -88,10 +88,10 @@ namespace WordWrap.UnitTests
         //[Test]
         //public void IfStringContainsThreeWordsBreakAfterEachWord()
         //{
-        //    string testString = "a b c";
+        //    string testString = "apple banana cherry";
         //    int testCol = 1;
 
-        //    string expected = "a\nb\nc";
+        //    string expected = "apple\nbanana\ncherry";
         //    var actual = test.Wrapper(testString, testCol);
 
         //    Assert.AreEqual(expected, actual);
