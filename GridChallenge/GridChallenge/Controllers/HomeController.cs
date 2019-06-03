@@ -17,6 +17,18 @@ namespace GridChallenge.Controllers
         }
 
 
+        [HttpPost]
+        public ActionResult RunGame(GameBoard model)
+        {
+            if (ModelState.IsValid)
+            {
+                Console.WriteLine("Is valid");
+            }
+
+            // something failed, redisplay form
+            return View(model);
+        }
+
         public IActionResult Privacy()
         {
             return View();

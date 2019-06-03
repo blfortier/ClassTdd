@@ -18,18 +18,19 @@
     <div class="text-center">
         <table id="game-grids" class="table-bordered" style="table-layout: fixed; width: 100%; height: 100%; border-color: darkblue; background-color: gray;">
 
-             @for (int row = 0; row < rows; row++)
-             {
-                 @:<tr style="height: 60px;">
+            @for (int row = 0; row < rows; row++)
+            {
+                @:<tr style="height: 60px;">
                     for (int col = 0; col < cols; col++)
                     {
-                        <td onclick="color(this)" class="@Model.isCellChecked.ToString();" value="@Model.isCellChecked"></td>
+                        <td onclick="color(this)" class="@Model.isCellChecked.ToString();" value="@Model.isCellChecked">[@row, @col]</td>
                     }
                 @:</tr>
-             }
-            
+            }
+
         </table>
         <br />
+        <input type="submit" value="Run" />
         <button class="btn-info" onclick="clearGridColor">Clear Grid</button>
     </div>
 </form>

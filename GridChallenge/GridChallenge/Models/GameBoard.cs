@@ -37,6 +37,5 @@ namespace GridChallenge.Models
 
             return boardState[row, col];
         }
-
     }
 }
