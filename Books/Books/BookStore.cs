@@ -49,9 +49,9 @@ namespace Books
                 else if (namesOfBooks.Count - numOfUniqueTitles == 2)
                     return (((oneBookPrice * 2) - (oneBookPrice * 2) * twoBookDiscount) + oneBookPrice * 2);
             }
-            else if (namesOfBooks.Count >= 5)
+            else if (namesOfBooks.Count == 5)
             {
-                bool isUnique = namesOfBooks.Distinct().Count() == 5;
+                bool isUnique = namesOfBooks.Distinct().Count() == namesOfBooks.Count;
                 int numOfUniqueTitles = namesOfBooks.Distinct().Count();
 
                 if (isUnique)
@@ -64,6 +64,22 @@ namespace Books
                     return (((oneBookPrice * 2) - (oneBookPrice * 2) * twoBookDiscount) + oneBookPrice * 3);
                 else
                     return (oneBookPrice * 5);
+            }
+            else
+            {
+                bool areFiveUnique = namesOfBooks.Distinct().Count() == 5;
+                int numOfUniqueTitles = namesOfBooks.Distinct().Count();
+
+                if (areFiveUnique)
+                    return ((oneBookPrice * 5) - ((oneBookPrice * 5) * fiveBookDiscount) + ((namesOfBooks.Count - 5) * oneBookPrice));
+                else if (namesOfBooks.Count - numOfUniqueTitles == 1)
+                    return ((oneBookPrice * 4) - (oneBookPrice * 4) * fourBookDiscount) + oneBookPrice * (namesOfBooks.Count - 4);
+                else if (namesOfBooks.Count - numOfUniqueTitles == 2)
+                    return ((oneBookPrice * 3) - ((oneBookPrice * 3) * threeBookDiscount) + (oneBookPrice * namesOfBooks.Count - 3));
+                else if (namesOfBooks.Count - numOfUniqueTitles == 3)
+                    return (((oneBookPrice * 2) - (oneBookPrice * 2) * twoBookDiscount) + oneBookPrice * (namesOfBooks.Count - 2));
+                else
+                    return (oneBookPrice * namesOfBooks.Count);
             }
 
 

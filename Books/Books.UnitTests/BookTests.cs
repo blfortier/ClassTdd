@@ -325,7 +325,6 @@ namespace Books.UnitTests
             string book6 = "Harry Potter and the Sorcerer's Stone";
             string book7 = "Harry Potter and the Order of the Phoenix";
             string book8 = "Harry Potter and the Goblet of Fire";
-          
 
             booksToBuy.Add(book1);
             booksToBuy.Add(book2);
@@ -336,19 +335,10 @@ namespace Books.UnitTests
             booksToBuy.Add(book7);
             booksToBuy.Add(book8);
 
-            decimal expected = 51.6m;
+            decimal expected = 54.0m;
             var actual = _bookStore.DetermineCostOfBooks(booksToBuy);
 
             Assert.AreEqual(expected, actual);
-
-
-            /*
-             
-                     2 copies of the first book
-        2 copies of the second book
-        2 copies of the third book
-        1 copy of the fourth book
-        1 copy of the fifth book*/
         }
     }
 }
