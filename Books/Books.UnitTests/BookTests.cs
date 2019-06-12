@@ -29,7 +29,10 @@ namespace Books.UnitTests
 
             int expected = 0;
             var actual = _bookStore.DetermineCostOfBooks(booksToBuy);
+
+            Assert.AreEqual(expected, actual);
         }
+
         [Test]
         public void BuyOneBook_CostIs8Dollars()
         {
@@ -84,7 +87,7 @@ namespace Books.UnitTests
 
             booksToBuy.Add(book1);
             booksToBuy.Add(book2);
-            booksToBuy.Add(book2);
+            booksToBuy.Add(book3);
 
             decimal expected = 24;
             var actual = _bookStore.DetermineCostOfBooks(booksToBuy);
@@ -110,7 +113,7 @@ namespace Books.UnitTests
         }
 
         [Test]
-        public void BuyThreeBooks_TwoSameTitleOneDifferentTitle_Get5PercentDiscountOn2OfSameTitle()
+        public void BuyThreeBooks_TwoOfSameTitleOneDifferentTitle_Get5PercentDiscountOn2WithDIfferentTitles()
         {
             string book1 = "Harry Potter and the Chamber of Secrets";
             string book2 = "Harry Potter and the Order of the Phoenix";
@@ -147,9 +150,9 @@ namespace Books.UnitTests
 
 
         [Test]
-        public void BuyFourBooks_2OfSameTitle_2Unique_Get5PercentDiscount()
+        public void BuyFourBooks_2OfSameTitle_2Unique_Get10PercentDiscount()
         {
-            string book1 = "Harry Potter and the Chamber of Secrets";
+            string book1 = "Harry Potter and the Goblet of Fire";
             string book2 = "Harry Potter and the Goblet of Fire";
             string book3 = "Harry Potter and the Order of the Phoenix";
             string book4 = "Harry Potter and the Prisoner of Azkaban";
@@ -159,12 +162,194 @@ namespace Books.UnitTests
             booksToBuy.Add(book3);
             booksToBuy.Add(book4);
 
-            decimal expected = 25.6m;
+            decimal expected = 29.6m;
             var actual = _bookStore.DetermineCostOfBooks(booksToBuy);
 
             Assert.AreEqual(expected, actual);
         }
 
+        [Test]
+        public void BuyFourBooks_2OfOneTitle_2OfAnotherTitle_Get5PercentDiscount()
+        {
+            string book1 = "Harry Potter and the Goblet of Fire";
+            string book2 = "Harry Potter and the Goblet of Fire";
+            string book3 = "Harry Potter and the Order of the Phoenix";
+            string book4 = "Harry Potter and the Order of the Phoenix";
+
+            booksToBuy.Add(book1);
+            booksToBuy.Add(book2);
+            booksToBuy.Add(book3);
+            booksToBuy.Add(book4);
+
+            decimal expected = 31.2m;
+            var actual = _bookStore.DetermineCostOfBooks(booksToBuy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void BuyFourBooks_3OfOneTitle_1OfAnotherTitle_Get5PercentDiscount()
+        {
+            string book1 = "Harry Potter and the Goblet of Fire";
+            string book2 = "Harry Potter and the Goblet of Fire";
+            string book3 = "Harry Potter and the Goblet of Fire";
+            string book4 = "Harry Potter and the Order of the Phoenix";
+
+            booksToBuy.Add(book1);
+            booksToBuy.Add(book2);
+            booksToBuy.Add(book3);
+            booksToBuy.Add(book4);
+
+            decimal expected = 31.2m;
+            var actual = _bookStore.DetermineCostOfBooks(booksToBuy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [Test]
+        public void BuyFiveBooks_AllUniqueTitles_Get25PercentDiscount()
+        {
+            string book1 = "Harry Potter and the Goblet of Fire";
+            string book2 = "Harry Potter and the Prisoner of Azkaban";
+            string book3 = "Harry Potter and the Chamber of Secrets";
+            string book4 = "Harry Potter and the Sorcerer's Stone";
+            string book5 = "Harry Potter and the Order of the Phoenix";
+
+            booksToBuy.Add(book1);
+            booksToBuy.Add(book2);
+            booksToBuy.Add(book3);
+            booksToBuy.Add(book4);
+            booksToBuy.Add(book5);
+
+            decimal expected = 30.0m;
+            var actual = _bookStore.DetermineCostOfBooks(booksToBuy);
+
+            Assert.AreEqual(expected, actual);
+        }
+        
+        [Test]
+        public void BuyFiveBooks_4UniqueTitles_1RepeatedTitle_Get20PercentDiscount()
+        {
+            string book1 = "Harry Potter and the Goblet of Fire";
+            string book2 = "Harry Potter and the Prisoner of Azkaban";
+            string book3 = "Harry Potter and the Chamber of Secrets";
+            string book4 = "Harry Potter and the Sorcerer's Stone";
+            string book5 = "Harry Potter and the Sorcerer's Stone";
+
+            booksToBuy.Add(book1);
+            booksToBuy.Add(book2);
+            booksToBuy.Add(book3);
+            booksToBuy.Add(book4);
+            booksToBuy.Add(book5);
+
+            decimal expected = 33.6m;
+            var actual = _bookStore.DetermineCostOfBooks(booksToBuy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [Test]
+        public void BuyFiveBooks_3UniqueTitles_2WithRepeatedTitle_Get10PercentDiscount()
+        {
+            string book1 = "Harry Potter and the Goblet of Fire";
+            string book2 = "Harry Potter and the Prisoner of Azkaban";
+            string book3 = "Harry Potter and the Chamber of Secrets";
+            string book4 = "Harry Potter and the Chamber of Secrets";
+            string book5 = "Harry Potter and the Chamber of Secrets";
+
+            booksToBuy.Add(book1);
+            booksToBuy.Add(book2);
+            booksToBuy.Add(book3);
+            booksToBuy.Add(book4);
+            booksToBuy.Add(book5);
+
+            decimal expected = 37.6m;
+            var actual = _bookStore.DetermineCostOfBooks(booksToBuy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void BuyFiveBooks_2UniqueTitles_3WithRepeatedTitle_Get5PercentDiscount()
+        {
+            string book1 = "Harry Potter and the Goblet of Fire";
+            string book2 = "Harry Potter and the Goblet of Fire";
+            string book3 = "Harry Potter and the Chamber of Secrets";
+            string book4 = "Harry Potter and the Chamber of Secrets";
+            string book5 = "Harry Potter and the Chamber of Secrets";
+
+            booksToBuy.Add(book1);
+            booksToBuy.Add(book2);
+            booksToBuy.Add(book3);
+            booksToBuy.Add(book4);
+            booksToBuy.Add(book5);
+
+            decimal expected = 39.2m;
+            var actual = _bookStore.DetermineCostOfBooks(booksToBuy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [Test]
+        public void BuyFiveBooks_AllSameTitles_GetNoDiscount()
+        {
+            string book1 = "Harry Potter and the Chamber of Secrets";
+            string book2 = "Harry Potter and the Chamber of Secrets";
+            string book3 = "Harry Potter and the Chamber of Secrets";
+            string book4 = "Harry Potter and the Chamber of Secrets";
+            string book5 = "Harry Potter and the Chamber of Secrets";
+
+            booksToBuy.Add(book1);
+            booksToBuy.Add(book2);
+            booksToBuy.Add(book3);
+            booksToBuy.Add(book4);
+            booksToBuy.Add(book5);
+
+            decimal expected = 40.0m;
+            var actual = _bookStore.DetermineCostOfBooks(booksToBuy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void BuyAnAssortmentOfBooks_ShouldTotal51and60Cents()
+        {
+            string book1 = "Harry Potter and the Chamber of Secrets";
+            string book2 = "Harry Potter and the Chamber of Secrets";
+            string book3 = "Harry Potter and the Prisoner of Azkaban";
+            string book4 = "Harry Potter and the Prisoner of Azkaban";
+            string book5 = "Harry Potter and the Sorcerer's Stone";
+            string book6 = "Harry Potter and the Sorcerer's Stone";
+            string book7 = "Harry Potter and the Order of the Phoenix";
+            string book8 = "Harry Potter and the Goblet of Fire";
+          
+
+            booksToBuy.Add(book1);
+            booksToBuy.Add(book2);
+            booksToBuy.Add(book3);
+            booksToBuy.Add(book4);
+            booksToBuy.Add(book5);
+            booksToBuy.Add(book6);
+            booksToBuy.Add(book7);
+            booksToBuy.Add(book8);
+
+            decimal expected = 51.6m;
+            var actual = _bookStore.DetermineCostOfBooks(booksToBuy);
+
+            Assert.AreEqual(expected, actual);
+
+
+            /*
+             
+                     2 copies of the first book
+        2 copies of the second book
+        2 copies of the third book
+        1 copy of the fourth book
+        1 copy of the fifth book*/
+        }
     }
 }
 
