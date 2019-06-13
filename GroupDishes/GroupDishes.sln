@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDishes", "GroupDishes\GroupDishes.csproj", "{64BBD24C-0130-4C84-980E-E3C0B9280FD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDishes.UnitTesting", "GroupDIshes.UnitTesting\GroupDishes.UnitTesting.csproj", "{CF6FED07-0A4D-42C6-A2A7-319A9A8A38D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64BBD24C-0130-4C84-980E-E3C0B9280FD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64BBD24C-0130-4C84-980E-E3C0B9280FD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64BBD24C-0130-4C84-980E-E3C0B9280FD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64BBD24C-0130-4C84-980E-E3C0B9280FD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF6FED07-0A4D-42C6-A2A7-319A9A8A38D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF6FED07-0A4D-42C6-A2A7-319A9A8A38D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF6FED07-0A4D-42C6-A2A7-319A9A8A38D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF6FED07-0A4D-42C6-A2A7-319A9A8A38D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8392D2E0-6363-4FCB-BA09-7455D7D61D76}
+	EndGlobalSection
+EndGlobal
