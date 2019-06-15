@@ -8,6 +8,8 @@ namespace GroupDishes
 {
     public class GroupingDishes
     {
+        Dictionary<string, int> ingredientCount = new Dictionary<string, int>();
+
         public string[][] GroupDishes(string[][] dishes)
         {
             throw new NotImplementedException();
@@ -15,8 +17,6 @@ namespace GroupDishes
 
         public Dictionary<string, int> AddIngredientsAndCountsToDictionary(string[][] dishes)
         {
-            Dictionary<string, int> ingredientCount = new Dictionary<string, int>();
-
             for (int row = 0; row < dishes.Length; row++)
             {
                 for (int col = 1; col < dishes[row].Length; col++)
@@ -33,31 +33,30 @@ namespace GroupDishes
         
         public Dictionary<string, List<string>> AddIngredientsAndListOfDishesToDictionary(string[][] dishes)
         {
-            Dictionary<string, List<string>> ingredientCount = new Dictionary<string, List<string>>();
-            List<string> dishesToAdd;
+            Dictionary<string, List<string>> result = new Dictionary<string, List<string>>();
+
+          //  List<string> dishesToAdd;
 
             for (int row = 0; row < dishes.Length; row++)
             {
                 for (int col = 1; col < dishes[row].Length; col++)
                 {
-                    List<string> test = 
+                    if (ingredientCount.ContainsKey(dishes[row][col]))
+                    {
 
-                    //if (ingredientCount.ContainsKey(dishes[row][col]))
-                    //{
-                    //    dishesToAdd.Add(dishes[row][0]);
+                    }
 
-                    //}
-                    //else
-                    //{
-                    //    //dishesToAdd = new List<string>();
 
-                    //   // dishesToAdd.Add(dishes[row][0]);
-                    //    ingredientCount.Add(dishes[row][col], new List<string> { dishes[row][0] });
-                    //}
+
+                    // List<string> test = 
+
+                
+
+                    Console.WriteLine(dishes[row][col]);
                 }
             }
 
-            return ingredientCount;
+            return result;
         }
 
     }

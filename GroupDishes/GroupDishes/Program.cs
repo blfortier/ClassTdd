@@ -10,6 +10,18 @@ namespace GroupDishes
     {
         static void Main(string[] args)
         {
+            GroupingDishes dish = new GroupingDishes();
+
+            string[][] dishes = {
+                new string[] { "Salad", "Tomato", "Cucumber", "Salad", "Sauce" },
+                new string[] { "Pizza", "Tomato", "Sausage", "Sauce", "Dough" },
+                new string[] { "Quesadilla", "Chicken", "Cheese", "Sauce" },
+                new string[] { "Sandwich", "Salad", "Bread", "Tomato", "Cheese" }
+            };
+
+            dish.AddIngredientsAndCountsToDictionary(dishes);
+            dish.AddIngredientsAndListOfDishesToDictionary(dishes);
+
 
         }
     }
