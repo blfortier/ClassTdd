@@ -35,28 +35,64 @@ namespace GroupDishes
         {
             Dictionary<string, List<string>> result = new Dictionary<string, List<string>>();
 
-          //  List<string> dishesToAdd;
+            /*
+             * string[][] dishes = {
+                new string[] { "Salad", "Tomato", "Cucumber", "Salad", "Sauce" },
+                new string[] { "Pizza", "Tomato", "Sausage", "Sauce", "Dough" },
+                new string[] { "Quesadilla", "Chicken", "Cheese", "Sauce" },
+                new string[] { "Sandwich", "Salad", "Bread", "Tomato", "Cheese" }
+            };
+             * 
+             */
+
 
             for (int row = 0; row < dishes.Length; row++)
             {
+                string dish = dishes[row][0];
+
                 for (int col = 1; col < dishes[row].Length; col++)
                 {
-                    if (ingredientCount.ContainsKey(dishes[row][col]))
-                    {
+                    string ingredient = dishes[row][col];
 
-                    }
+                    if (!result.ContainsKey(ingredient))
+                        result.Add(ingredient, new List<string>());
 
-
-
-                    // List<string> test = 
-
-                
-
-                    Console.WriteLine(dishes[row][col]);
+                    result[ingredient].Add(dish);
+                    //IngredientsAndTheirDishes[dishes[row][col]].Add(dishes[row][0]);
                 }
             }
 
             return result;
+
+
+
+
+            //foreach (var item in ingredientCount)
+            //{
+            //    if (item.Value >= 2)
+            //    {
+            //        List<string> dishesToAdd;
+
+            //        for (int row = 0; row < dishes.Length; row++)
+            //        {
+            //            for (int col = 1; col < dishes[row].Length; col++)
+            //            {
+            //                dishesToAdd = new List<string>();
+
+            //                if (dishes[row][col] == item.Key)
+            //                {
+
+            //                    dishesToAdd.Add(dishes[row][0]);
+
+            //                }
+            //                result.Add(item.Key, dishesToAdd);
+
+            //            }
+            //        }
+            //        // result.Add();
+            //    }
+            //}
+
         }
 
     }
