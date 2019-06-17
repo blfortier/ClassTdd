@@ -27,19 +27,23 @@ namespace GroupDishes
             //    Console.WriteLine("key: {0}, value: {1}", item.Key, item.Value);
             //}
 
-            var test = dish.AddIngredientsAndListOfDishesToDictionary(dishes);
+           // dish.AddIngredientsAndListOfDishesToDictionary(dishes);
+            Dictionary<string, List<string>> test = dish.AddIngredientsAndListOfDishesToDictionary(dishes);
 
-            Console.WriteLine(test.Count);
             foreach (var item in test)
             {
-                Console.WriteLine("hi");
-                Console.WriteLine("key: {0}", item.Key);
-
-                foreach (var t in test.Values)
-                {
-                    Console.WriteLine("values: {0}", t);
-                }
+                Console.WriteLine("loop");
+                Console.WriteLine("{0} {1}", item.Key, item.Value);
             }
+
+
+            //foreach (var item in test)
+            //{
+            //  //  Console.WriteLine("hi");
+            //    Console.WriteLine("key: {0}", item.Key);
+
+               
+            //}
 
         }
     }

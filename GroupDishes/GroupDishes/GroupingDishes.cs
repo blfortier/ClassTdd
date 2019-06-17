@@ -46,19 +46,26 @@ namespace GroupDishes
              */
 
 
-            for (int row = 0; row < dishes.Length; row++)
+            foreach (var item in ingredientCount)
             {
-                string dish = dishes[row][0];
 
-                for (int col = 1; col < dishes[row].Length; col++)
+                if (item.Value >= 2)
                 {
-                    string ingredient = dishes[row][col];
+                    for (int row = 0; row < dishes.Length; row++)
+                    {
+                        string dish = dishes[row][0];
 
-                    if (!result.ContainsKey(ingredient))
-                        result.Add(ingredient, new List<string>());
+                        for (int col = 1; col < dishes[row].Length; col++)
+                        {
+                            string ingredient = dishes[row][col];
 
-                    result[ingredient].Add(dish);
-                    //IngredientsAndTheirDishes[dishes[row][col]].Add(dishes[row][0]);
+                            if (!result.ContainsKey(ingredient))
+                                result.Add(ingredient, new List<string>());
+
+                            result[ingredient].Add(dish);
+                            //IngredientsAndTheirDishes[dishes[row][col]].Add(dishes[row][0]);
+                        }
+                    }
                 }
             }
 

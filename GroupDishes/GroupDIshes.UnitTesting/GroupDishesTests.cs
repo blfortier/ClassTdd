@@ -89,10 +89,14 @@ namespace GroupDIshes.UnitTesting
             ingredients.Add("Sausage", new List<string> { "Pizza" });
             ingredients.Add("Tomato", new List<string> { "Salad", "Pizza", "Sandwich" });
          
-            foreach (KeyValuePair<string, List<string>> item in ingredients)
+            foreach (var kvp in ingredients)
             {
-                Console.WriteLine(item.Key);
-                Console.WriteLine(item.Value);
+                Console.WriteLine("key: {0}", kvp.Key);
+
+                foreach (string val in kvp.Value)
+                {
+                    Console.WriteLine("{value: {0}", val);
+                }
             }
 
             Dictionary<string, List<string>> expected = ingredients;
