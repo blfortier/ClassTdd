@@ -33,73 +33,37 @@ namespace GroupDishes
         
         public Dictionary<string, List<string>> AddIngredientsAndListOfDishesToDictionary(string[][] dishes)
         {
-            Dictionary<string, List<string>> result = new Dictionary<string, List<string>>();
+            Dictionary<string, List<string>> dictionaryWithIngredientsandTheirDishes = new Dictionary<string, List<string>>();
 
-            /*
-             * string[][] dishes = {
-                new string[] { "Salad", "Tomato", "Cucumber", "Salad", "Sauce" },
-                new string[] { "Pizza", "Tomato", "Sausage", "Sauce", "Dough" },
-                new string[] { "Quesadilla", "Chicken", "Cheese", "Sauce" },
-                new string[] { "Sandwich", "Salad", "Bread", "Tomato", "Cheese" }
-            };
-             * 
-             */
-
-
-            foreach (var item in ingredientCount)
-            {
-
-                if (item.Value >= 2)
+                for (int row = 0; row < dishes.Length; row++)
                 {
-                    for (int row = 0; row < dishes.Length; row++)
+                    string dish = dishes[row][0];
+
+                    for (int col = 1; col < dishes[row].Length; col++)
                     {
-                        string dish = dishes[row][0];
+                        string ingredient = dishes[row][col];
 
-                        for (int col = 1; col < dishes[row].Length; col++)
-                        {
-                            string ingredient = dishes[row][col];
+                        if (!dictionaryWithIngredientsandTheirDishes.ContainsKey(ingredient))
+                        dictionaryWithIngredientsandTheirDishes.Add(ingredient, new List<string>());
 
-                            if (!result.ContainsKey(ingredient))
-                                result.Add(ingredient, new List<string>());
-
-                            result[ingredient].Add(dish);
-                            //IngredientsAndTheirDishes[dishes[row][col]].Add(dishes[row][0]);
-                        }
+                        dictionaryWithIngredientsandTheirDishes[ingredient].Add(dish);
                     }
                 }
-            }
 
-            return result;
+                return dictionaryWithIngredientsandTheirDishes;
+        }
 
+        public List<string> GetListOfIngredientsThatArePresentIn2OrMoreDishes(Dictionary<string, List<string>> IngredientsAndTheirDishes)
+        {
+            List<string> ingredientsWithAtLeast2Dishes = new List<string>();
 
+            foreach (string ingredient in IngredientsAndTheirDishes.Keys)
+                if (IngredientsAndTheirDishes[ingredient].Count >= 2)
+                {
+                    ingredientsWithAtLeast2Dishes.Add(ingredient);
+                }
 
-
-            //foreach (var item in ingredientCount)
-            //{
-            //    if (item.Value >= 2)
-            //    {
-            //        List<string> dishesToAdd;
-
-            //        for (int row = 0; row < dishes.Length; row++)
-            //        {
-            //            for (int col = 1; col < dishes[row].Length; col++)
-            //            {
-            //                dishesToAdd = new List<string>();
-
-            //                if (dishes[row][col] == item.Key)
-            //                {
-
-            //                    dishesToAdd.Add(dishes[row][0]);
-
-            //                }
-            //                result.Add(item.Key, dishesToAdd);
-
-            //            }
-            //        }
-            //        // result.Add();
-            //    }
-            //}
-
+            return ingredientsWithAtLeast2Dishes;
         }
 
     }

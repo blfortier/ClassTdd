@@ -22,18 +22,21 @@ namespace GroupDishes
             //    dish.AddIngredientsAndCountsToDictionary(dishes);
             //  dish.AddIngredientsAndListOfDishesToDictionary(dishes);
 
-            //foreach (var item in dish.AddIngredientsAndCountsToDictionary(dishes))
-            //{
-            //    Console.WriteLine("key: {0}, value: {1}", item.Key, item.Value);
-            //}
+            foreach (var item in dish.AddIngredientsAndCountsToDictionary(dishes))
+            {
+                Console.WriteLine("key: {0}, value: {1}", item.Key, item.Value);
+            }
 
-           // dish.AddIngredientsAndListOfDishesToDictionary(dishes);
+            // dish.AddIngredientsAndListOfDishesToDictionary(dishes);
             Dictionary<string, List<string>> test = dish.AddIngredientsAndListOfDishesToDictionary(dishes);
 
             foreach (var item in test)
             {
-                Console.WriteLine("loop");
-                Console.WriteLine("{0} {1}", item.Key, item.Value);
+                Console.WriteLine("key: {0}", item.Key);
+                foreach (var v in item.Value)
+                {
+                    Console.WriteLine("value: {0}", v);
+                }
             }
 
 
