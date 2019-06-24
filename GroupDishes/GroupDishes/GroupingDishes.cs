@@ -53,7 +53,7 @@ namespace GroupDishes
                 return dictionaryWithIngredientsandTheirDishes;
         }
 
-        public List<string> GetListOfIngredientsThatArePresentIn2OrMoreDishes(Dictionary<string, List<string>> IngredientsAndTheirDishes)
+        public List<string> GetListOfIngredientsThatArePresentIn2orMoreDishes(Dictionary<string, List<string>> IngredientsAndTheirDishes)
         {
             List<string> ingredientsWithAtLeast2Dishes = new List<string>();
 
