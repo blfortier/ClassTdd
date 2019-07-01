@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapsackWeight", "ConsoleApp1\KnapsackWeight.csproj", "{4139476D-D779-4E65-AAD3-5CD9D230A153}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knapsack.UnitTesting", "Knapsack.UnitTesting\Knapsack.UnitTesting.csproj", "{F5BFA401-2CC8-481D-B44D-DEBB01303F65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4139476D-D779-4E65-AAD3-5CD9D230A153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4139476D-D779-4E65-AAD3-5CD9D230A153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4139476D-D779-4E65-AAD3-5CD9D230A153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4139476D-D779-4E65-AAD3-5CD9D230A153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5BFA401-2CC8-481D-B44D-DEBB01303F65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5BFA401-2CC8-481D-B44D-DEBB01303F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5BFA401-2CC8-481D-B44D-DEBB01303F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5BFA401-2CC8-481D-B44D-DEBB01303F65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {956FF848-E233-4B35-86C9-FA4B9ED985BB}
+	EndGlobalSection
+EndGlobal
